@@ -8,7 +8,8 @@ import { MainInvoiceComponent } from './components/main-invoice/main-invoice.com
 
 const routes: Routes = [
   { path: 'invoices', component: ListInvoiceComponent },
-  { path: 'invoice/:id/:active', component: MainInvoiceComponent },
+  // { path: 'invoice/:id/:active', component: MainInvoiceComponent },
+  { path: 'invoice', component: MainInvoiceComponent },
   { path: '', redirectTo: '/invoices', pathMatch: 'full' },
   { path: '**', redirectTo: '/invoices' },
 ];

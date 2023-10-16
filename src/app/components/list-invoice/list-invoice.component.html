@@ -2,7 +2,13 @@
 <ul *ngFor="let invoice of invoices">
   <li>
     Facture: {{ invoice.idFacture }}
-    <a [routerLink]="['/invoice', invoice.idFacture, invoice.active]"
+    <!-- <a [routerLink]="['/invoice', invoice.idFacture, invoice.active]"
+      >Details</a
+    > -->
+
+    <a
+      [routerLink]="['/invoice']"
+      [queryParams]="{ id: invoice.idFacture, active: invoice.active }"
       >Details</a
     >
   </li>

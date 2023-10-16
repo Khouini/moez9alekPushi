@@ -17,12 +17,12 @@ export class MainInvoiceComponent {
     private router: Router,
     private invoiceService: InvoiceService
   ) {
-    const id = Number(this.activated.snapshot.params['id']);
-    const active = this.activated.snapshot.params['active'];
-    console.log(
-      '🚀 ~ file: main-invoice.component.ts:21 ~ MainInvoiceComponent ~ active:',
-      active
-    );
+    // const id = Number(this.activated.snapshot.params['id']);
+    // const active = this.activated.snapshot.params['active'];
+
+    const id = Number(this.activated.snapshot.queryParams['id']);
+    const active = this.activated.snapshot.queryParams['active'];
+
     this.invoiceIsActive = active === 'true' ? true : false;
     this.invoice = this.invoiceService.getInvoice(id);
   }
