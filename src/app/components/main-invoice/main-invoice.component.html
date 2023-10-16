@@ -1,0 +1,15 @@
+<div>
+  <div *ngIf="invoiceIsActive">
+    <h2>Invoice Details</h2>
+    <ul>
+      <li><strong>ID:</strong> {{ invoice.idFacture }}</li>
+      <li><strong>Montant Facture:</strong> {{ invoice.montantFacture }}</li>
+      <li><strong>Montant Remise:</strong> {{ invoice.montantRemise }}</li>
+      <li><strong>Date Facture:</strong> {{ invoice.dateFacture }}</li>
+      <li><strong>Active:</strong> {{ invoice.active ? "Yes" : "No" }}</li>
+    </ul>
+  </div>
+  <p *ngIf="!invoiceIsActive">
+    Impossible de visualiser les détailsde la facture
+  </p>
+</div>
