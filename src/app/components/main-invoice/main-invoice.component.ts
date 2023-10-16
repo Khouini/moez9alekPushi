@@ -26,4 +26,8 @@ export class MainInvoiceComponent {
     this.invoiceIsActive = active === 'true' ? true : false;
     this.invoice = this.invoiceService.getInvoice(id);
   }
+
+  toInvoices() {
+    this.router.navigate(['/invoices']);
+  }
 }
