@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { MainInvoiceComponent } from './components/main-invoice/main-invoice.component';
 import { ListInvoiceComponent } from './components/list-invoice/list-invoice.component';
 import { AppRoutingModule } from './app-routing.module';
+import { InvoiceComponent } from './components/invoice/invoice.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainInvoiceComponent,
-    ListInvoiceComponent
+    ListInvoiceComponent,
+    InvoiceComponent
   ],
   imports: [
     BrowserModule,

@@ -5,12 +5,21 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { ListInvoiceComponent } from './components/list-invoice/list-invoice.component';
 import { MainInvoiceComponent } from './components/main-invoice/main-invoice.component';
+import { InvoiceComponent } from './components/invoice/invoice.component';
 
 const routes: Routes = [
-  { path: 'invoices', component: ListInvoiceComponent },
-  // { path: 'invoice/:id/:active', component: MainInvoiceComponent },
-  { path: 'invoice', component: MainInvoiceComponent },
-  { path: '', redirectTo: '/invoices', pathMatch: 'full' },
+  {
+    path: 'invoice',
+    component: InvoiceComponent,
+    children: [
+      { path: '', component: MainInvoiceComponent },
+      {
+        path: 'list',
+        component: ListInvoiceComponent,
+      },
+    ],
+  },
+  { path: '', redirectTo: '/invoice/list', pathMatch: 'full' },
   { path: '**', redirectTo: '/invoices' },
 ];
 

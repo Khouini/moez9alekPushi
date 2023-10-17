@@ -28,6 +28,6 @@ export class MainInvoiceComponent {
   }
 
   toInvoices() {
-    this.router.navigate(['/invoices']);
+    this.router.navigate(['/invoice/list']);
   }
 }
