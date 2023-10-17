@@ -1,26 +1,17 @@
 // ng generate module app-routing --flat --module=app
 
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { ListInvoiceComponent } from './components/list-invoice/list-invoice.component';
-import { MainInvoiceComponent } from './components/main-invoice/main-invoice.component';
-import { InvoiceComponent } from './components/invoice/invoice.component';
 
 const routes: Routes = [
   {
     path: 'invoice',
-    component: InvoiceComponent,
-    children: [
-      { path: '', component: MainInvoiceComponent },
-      {
-        path: 'list',
-        component: ListInvoiceComponent,
-      },
-    ],
+    loadChildren: () =>
+      import('./feautures/invoice/invoice.module').then((m) => m.InvoiceModule),
   },
-  { path: '', redirectTo: '/invoice/list', pathMatch: 'full' },
-  { path: '**', redirectTo: '/invoices' },
+
+  // { path: '', redirectTo: '/invoice/list', pathMatch: 'full' },
+  // { path: '**', redirectTo: '/invoices' },
 ];
 
 @NgModule({

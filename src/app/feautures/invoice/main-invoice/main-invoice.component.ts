@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { InvoiceService } from '../../services/invoice.service';
+// import { InvoiceService } from '../../../services/invoice.service';
 import { Invoice } from 'src/app/models/Invoice.model';
 
 import { ActivatedRoute, Router } from '@angular/router';
+import { InvoiceService } from 'src/app/services/invoice.service';
 
 @Component({
   selector: 'app-main-invoice',
